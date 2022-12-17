@@ -58,7 +58,7 @@ public class Player : Unit
     private void HandleSanity()
     {
         sanity -= SANITY_LOSE_RATE * Time.deltaTime;
-            //sanitySlider.value = sanity;
+        SanitySliderRef.value = sanity;
     }
 
     private void RegainSanity(float sanityGain)
@@ -68,13 +68,13 @@ public class Player : Unit
         {
             sanity = 100;
         }
-        //sanitySlider.value = sanity;
+        SanitySliderRef.value = sanity;
     }
 
     private void TakeDamage(float damage)
     {
         health -= damage;
-        //healthSlider.value = health;
+        HealthSliderRef.value = health;
     }
     
 }
