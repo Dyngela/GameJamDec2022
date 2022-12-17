@@ -5,7 +5,12 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
+    [Header("Unit Properties")]
     public Vector2 inputMovement = new Vector2();
+    public float moveSpeed = 5f;
+
+    public Rigidbody2D _rb;
+    
 
     private void FixedUpdate()
     {
@@ -14,6 +19,6 @@ public class Unit : MonoBehaviour
 
     private void HandleMovements()
     {
-        
+        _rb.MovePosition(_rb.position + inputMovement.normalized * (moveSpeed * Time.fixedDeltaTime));
     }
 }
