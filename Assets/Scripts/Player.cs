@@ -7,7 +7,6 @@ using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Rigidbody2D))]
 public class Player : Unit
 {
     [Header("Player Properties")]

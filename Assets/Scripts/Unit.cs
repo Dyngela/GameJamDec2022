@@ -9,12 +9,8 @@ public class Unit : MonoBehaviour
     public Vector2 inputMovement = new Vector2();
     public float moveSpeed = 5f;
 
-    private Rigidbody2D _rb;
-
-    private void Start()
-    {
-        _rb = GetComponent<Rigidbody2D>();
-    }
+    public Rigidbody2D _rb;
+    
 
     private void FixedUpdate()
     {
