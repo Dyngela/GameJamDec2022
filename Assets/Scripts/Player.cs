@@ -5,20 +5,24 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.Serialization;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : Unit
 {
+    [Header("Player Properties")]
     // GameObject
     public static Player instance;
-    public Rigidbody2D rb;
-    
+
+    [Header("Component refs")]
+    [SerializeField] private Slider HealthSliderRef;
+    [SerializeField] private Slider StaminaSliderRef;
+    [SerializeField] private Slider SanitySliderRef;
+
+    [Header("Stats")]
     // Stats
-    private Vector2 _movement;
     public float maxHealth = 100f;
     public float health;
-    public float moveSpeed = 5f;
     public float maxSanity = 100f;
     public float sanity;
     private const float SANITY_LOSE_RATE = 2.0f;
@@ -48,15 +52,8 @@ public class Player : Unit
         if (GameManager.instance.isGamePaused) return;
         
         HandleSanity();
-        _movement.x = Input.GetAxisRaw("Horizontal");
-        _movement.y = Input.GetAxisRaw("Vertical");
-
-    }
-
-    private void FixedUpdate()
-    {
-        // todo check if the position is accessible
-        rb.MovePosition(rb.position + _movement * (moveSpeed * Time.fixedDeltaTime));
+        inputMovement.x = Input.GetAxisRaw("Horizontal");
+        inputMovement.y = Input.GetAxisRaw("Vertical");
     }
 
     private void HandleSanity()
