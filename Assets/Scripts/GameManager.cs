@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
     public bool isGamePaused = false;
     private float previousTimeScale = 0f;
     public static GameManager instance;
