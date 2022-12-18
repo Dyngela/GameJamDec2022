@@ -5,6 +5,7 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,14 +33,22 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(InitializeGame());
     }
+    
+    public void OnClickExit()
+    {
+        SceneManager.LoadScene("main menu");
+    }
+
+    public void OnRetryClick()
+    {
+        StartCoroutine(InitializeGame());
+    }
 
     private IEnumerator InitializeGame()
     {
         Debug.Log("Initializing game");
         Player.instance.transform.position = Vector3.zero;
 
-        yield return new WaitForEndOfFrame();
-        
         _plankPickup?.gameObject?.SetActive(true);
         _exitColliderBlock?.gameObject?.SetActive(true);
         _exitArea?.gameObject?.SetActive(false);
@@ -51,6 +60,12 @@ public class GameManager : MonoBehaviour
 
         _hasPlank = false;
         _hasEscaped = false;
+        
+        MenuManager.instance.Hide();
+        
+        if (Time.timeScale == 0)
+            TogglePause();
+        yield return null;
     }
 
     // Update is called once per frame

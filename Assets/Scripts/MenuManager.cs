@@ -30,4 +30,9 @@ public class MenuManager : MonoBehaviour
         GameOver.SetActive(true);
         GameOverReasonText.GetComponent<TextMeshProUGUI>().text = message;
     }
+
+    public void Hide()
+    {
+        GameOver.SetActive(false);
+    }
 }
