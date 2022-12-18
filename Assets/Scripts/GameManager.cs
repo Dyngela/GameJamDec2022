@@ -17,7 +17,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Collider2D _exitColliderBlock;
     [SerializeField] private ExitZone _exitArea;
     [SerializeField] private TMP_Text _currentTimeText;
+    [SerializeField] private GameObject _tilemapExitLocked;
+    [SerializeField] private GameObject _tilemapExitUnlocked;
     private TimeSpan _currentTime;
+    private bool _hasPlank;
+    private bool _hasEscaped;
     
     private void Awake()
     {
@@ -26,7 +30,27 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(InitializeGame());
+    }
+
+    private IEnumerator InitializeGame()
+    {
+        Debug.Log("Initializing game");
+        Player.instance.transform.position = Vector3.zero;
+
+        yield return new WaitForEndOfFrame();
+        
+        _plankPickup?.gameObject?.SetActive(true);
+        _exitColliderBlock?.gameObject?.SetActive(true);
+        _exitArea?.gameObject?.SetActive(false);
+        
+        _tilemapExitLocked?.SetActive(true);
+        _tilemapExitUnlocked?.SetActive(false);
+        
         _currentTime = TimeSpan.Zero;
+
+        _hasPlank = false;
+        _hasEscaped = false;
     }
 
     // Update is called once per frame
@@ -76,6 +100,24 @@ public class GameManager : MonoBehaviour
 
     public void OnPlankPickup()
     {
-        throw new System.NotImplementedException();
+        if (_hasPlank) return;
+        _hasPlank = true;
+        
+        Debug.Log("Player picked up plank");
+        
+        _plankPickup.gameObject.SetActive(false);
+        _exitColliderBlock.gameObject.SetActive(false);
+        _exitArea.gameObject.SetActive(true);
+        
+        _tilemapExitLocked.SetActive(false);
+        _tilemapExitUnlocked.SetActive(true);
+    }
+
+    public void OnEscaped()
+    {
+        if (_hasEscaped) return;
+        _hasEscaped = true;
+        
+        TogglePause();
     }
 }
