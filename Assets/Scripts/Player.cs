@@ -7,6 +7,8 @@ public class Player : Unit
     // GameObject
     public static Player instance;
 
+    public Animator animator;
+
     [Header("Component refs")]
     [SerializeField] private Slider HealthSliderRef;
     [SerializeField] private Slider StaminaSliderRef;
@@ -47,6 +49,17 @@ public class Player : Unit
         HandleSanity();
         inputMovement.x = Input.GetAxisRaw("Horizontal");
         inputMovement.y = Input.GetAxisRaw("Vertical");
+        animator.SetFloat("Horizontal", inputMovement.x);
+        animator.SetFloat("Vertical", inputMovement.y);
+        animator.SetFloat("Speed", inputMovement.sqrMagnitude);
+        if (inputMovement.x > 0)
+        {
+            gameObject.transform.localScale = new Vector3(1, 1, 1);
+        }
+        if (inputMovement.x < 0)
+        {
+            gameObject.transform.localScale = new Vector3(-1, 1, 1);
+        }
     }
 
     private void HandleSanity()

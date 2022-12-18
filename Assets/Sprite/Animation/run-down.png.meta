@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 638901192373d38409c953e8271ea6d6
+guid: 06e102b5cab99c0449c8f8b5ab9cb661
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,173 +101,185 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: run-up_0
+      name: run-down_0
       rect:
         serializedVersion: 2
         x: 1
-        y: 2
-        width: 16
+        y: 0
+        width: 15
         height: 43
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3131b96ffa776064792b18022dbef42e
-      internalID: 689900785
+      spriteID: 5f31814b9bcc90f44acc038cc884461a
+      internalID: -1042981104
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run-up_1
+      name: run-down_1
       rect:
         serializedVersion: 2
-        x: 19
-        y: 2
-        width: 16
+        x: 20
+        y: 0
+        width: 15
         height: 41
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 192cd1be8f2e11a45aa6e40ed8a0d371
-      internalID: -2081373063
+      spriteID: d443ce8b10c8cfd4ea89b80f26218367
+      internalID: -297289012
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run-up_2
+      name: run-down_2
       rect:
         serializedVersion: 2
-        x: 37
-        y: 2
-        width: 16
+        x: 38
+        y: 0
+        width: 15
         height: 40
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3f4be802c808ac4c8fac95858dfad6b
-      internalID: -775900814
+      spriteID: e063abe224a34a243a1db4ce58931367
+      internalID: 724206366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run-up_3
+      name: run-down_3
       rect:
         serializedVersion: 2
         x: 55
-        y: 2
-        width: 16
+        y: 0
+        width: 15
         height: 43
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00ef72f715306be4eb859aa48b1356e8
-      internalID: 88241663
+      spriteID: 0d767b4f600c1dc40867e6ead7dfb280
+      internalID: -610679557
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run-up_4
+      name: run-down_4
       rect:
         serializedVersion: 2
-        x: 72
-        y: 2
-        width: 16
+        x: 73
+        y: 0
+        width: 15
         height: 43
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 118d0dc5ae71265459068740f4c59925
-      internalID: -1599061623
+      spriteID: aaf87db335b606b4ab344efb201ce0af
+      internalID: -881543463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run-up_5
+      name: run-down_5
       rect:
         serializedVersion: 2
         x: 90
-        y: 2
-        width: 16
-        height: 40
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 0
+        width: 15
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ed42edf4db5dc24589d9031015764ef
-      internalID: -148302856
+      spriteID: f28f06ae3c54fa646bc5a64b0e745e2f
+      internalID: 1034641406
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run-up_6
+      name: run-down_6
       rect:
         serializedVersion: 2
         x: 108
-        y: 2
-        width: 16
-        height: 41
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 0
+        width: 15
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09e53ac4a6296bf40ae51141e51854d1
-      internalID: -2086883212
+      spriteID: 24e5f2b411592b84c957508ef211f70d
+      internalID: 554144280
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run-up_7
+      name: run-down_7
       rect:
         serializedVersion: 2
-        x: 126
-        y: 2
-        width: 16
+        x: 127
+        y: 0
+        width: 15
         height: 43
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2445325d416d1c44b9c6893fa969d032
-      internalID: 1341695891
+      spriteID: 24bd1c022a4fd094ba4c2e0e56b66105
+      internalID: -561438862
       vertices: []
       indices: 
       edges: []
@@ -283,14 +295,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      run-up_4: -1599061623
-      run-up_2: -775900814
-      run-up_6: -2086883212
-      run-up_5: -148302856
-      run-up_3: 88241663
-      run-up_0: 689900785
-      run-up_1: -2081373063
-      run-up_7: 1341695891
+      run-down_4: -881543463
+      run-down_1: -297289012
+      run-down_2: 724206366
+      run-down_6: 554144280
+      run-down_3: -610679557
+      run-down_0: -1042981104
+      run-down_5: 1034641406
+      run-down_7: -561438862
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
