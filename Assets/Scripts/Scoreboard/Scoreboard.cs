@@ -8,7 +8,8 @@ using UnityEngine;
 public static class Scoreboard
 {
     private const string apiUrl = "https://scrspace23.azurewebsites.net";
-    
+    public static List<ScoreRecord> cachedScores;
+
     public static async Task<List<ScoreRecord>> GetScoreboard()
     {
         Debug.Log("Retrieving scoreboard...");
@@ -18,10 +19,10 @@ public static class Scoreboard
             Debug.LogError($"Could not retrieve scoreboard (status code: {response.StatusCode})");
 
         string responseContent = await response.Content.ReadAsStringAsync();
-        List<ScoreRecord> scoreboard = JsonConvert.DeserializeObject<List<ScoreRecord>>(responseContent);
-        
+        cachedScores = JsonConvert.DeserializeObject<List<ScoreRecord>>(responseContent);
+
         Debug.Log("Scoreboard retrieved.");
-        return scoreboard;
+        return cachedScores;
     }
 
     public static async Task CreateScoreEntry(ScoreEntry entry)
