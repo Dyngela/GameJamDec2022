@@ -20,7 +20,7 @@ public class Player : Unit
     public float health;
     public float maxSanity = 100f;
     public float sanity;
-    private const float SANITY_LOSE_RATE = 2.0f;
+    private const float SANITY_LOSE_RATE = .5f;
     public float maxStamina = 100f;
     public float stamina;
 
