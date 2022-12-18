@@ -1,12 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
     [Header("Unit Properties")]
-    public Vector2 inputMovement = new Vector2();
+    public Vector3 inputMovement = new Vector3();
     public float moveSpeed = 5f;
 
     public Rigidbody2D _rb;
@@ -19,6 +16,8 @@ public class Unit : MonoBehaviour
 
     private void HandleMovements()
     {
-        _rb.MovePosition(_rb.position + inputMovement.normalized * (moveSpeed * Time.fixedDeltaTime));
+        Vector3 position = transform.position;
+        transform.position = position + inputMovement.normalized * (moveSpeed * Time.fixedDeltaTime);
+        // _rb.MovePosition(_rb.position + );
     }
 }
