@@ -20761,6 +20761,8 @@ MonoBehaviour:
   GameOver: {fileID: 1548047679}
   GameWin: {fileID: 254730992}
   GameOverReasonText: {fileID: 995525828}
+  ButtonRetry: {fileID: 246066919}
+  ButtonExit: {fileID: 203087018}
 --- !u!4 &666764754
 Transform:
   m_ObjectHideFlags: 0

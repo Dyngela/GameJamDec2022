@@ -11,6 +11,8 @@ public class MenuManager : MonoBehaviour
     public GameObject GameOver;
     public GameObject GameWin;
     public GameObject GameOverReasonText;
+    public GameObject ButtonRetry;
+    public GameObject ButtonExit;
 
     private void Awake()
     {
@@ -24,10 +26,12 @@ public class MenuManager : MonoBehaviour
         GameWin.SetActive(false);
     }
 
-    // Update is called once per frame
-    public void MissionFailed(string message)
+    public void MissionFailed(string message, bool buttonDisplay = true)
     {
         GameOver.SetActive(true);
+        ButtonRetry.SetActive(buttonDisplay);
+        ButtonExit.SetActive(buttonDisplay);
+        
         GameOverReasonText.GetComponent<TextMeshProUGUI>().text = message;
     }
 

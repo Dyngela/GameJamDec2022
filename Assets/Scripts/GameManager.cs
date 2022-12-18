@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
+using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
+using Task = System.Threading.Tasks.Task;
 
 public class GameManager : MonoBehaviour
 {
@@ -134,5 +136,24 @@ public class GameManager : MonoBehaviour
         _hasEscaped = true;
         
         TogglePause();
+        StartCoroutine(SendScore());
+    }
+    
+    public IEnumerator SendScore()
+    {
+        MenuManager.instance.MissionFailed("Submitting your score...", false);
+        
+        ScoreEntry entry = new ScoreEntry
+        {
+            PlayerName = PlayerPrefs.GetString("playerName", "legent27"),
+            PlayerGuid = "",
+            Span = _currentTime.Ticks
+        };
+        
+        Task task = Scoreboard.CreateScoreEntry(entry);
+        yield return new WaitUntil(() => task.IsCompleted);
+        
+        Debug.Log("ScoreSent!");
+        MenuManager.instance.MissionFailed("Score submitted!");
     }
 }
