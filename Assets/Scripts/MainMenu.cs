@@ -48,7 +48,7 @@ public class MainMenu : MonoBehaviour
 
     public void OnPlay()
     {
-        SceneManager.LoadScene("test");
+        SceneManager.LoadScene("game");
     }
 
     public void OnShowMainMenu()

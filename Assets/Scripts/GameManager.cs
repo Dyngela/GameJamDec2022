@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator InitializeGame()
     {
         Debug.Log("Initializing game");
-        Player.instance.transform.position = Vector3.zero;
+        Player.instance.Reset();
 
         _plankPickup?.gameObject?.SetActive(true);
         _exitColliderBlock?.gameObject?.SetActive(true);
@@ -73,26 +73,12 @@ public class GameManager : MonoBehaviour
         
         // Update time
         _currentTime = _currentTime.Add(TimeSpan.FromSeconds(Time.deltaTime));
-        if (_currentTimeText != null)
-            _currentTimeText.text = _currentTime.ToString();
-        
-        
+        _currentTimeText.text = _currentTime.ToString();
+
         if (Player.instance.sanity <= 0.0f)
         {
-            //todo game over
             TogglePause();
             MenuManager.instance.MissionFailed("You went insane");
-        }
-
-        if (Player.instance.health <= 0.0f)
-        {
-            TogglePause();
-            MenuManager.instance.MissionFailed("You just died");
-        }
-
-        if (Player.instance.playerCured)
-        {
-            // TODO game win
         }
     }
 
