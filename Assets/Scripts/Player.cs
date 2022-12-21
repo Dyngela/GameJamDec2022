@@ -29,6 +29,14 @@ public class Player : Unit
     private bool _hasSecondAntidoteComponent;
     private bool _hasThirdAntidoteComponent;
     public bool playerCured;
+    
+    // Animation keys
+    [Header("Animation")]
+    private static readonly int Horizontal = Animator.StringToHash("Horizontal");
+    private static readonly int Vertical = Animator.StringToHash("Vertical");
+    private static readonly int Speed = Animator.StringToHash("Speed");
+    [SerializeField] private Transform renderTransform;
+    
 
     private void Awake()
     {
@@ -47,19 +55,19 @@ public class Player : Unit
         if (GameManager.instance.isGamePaused) return;
         
         HandleSanity();
+        
+        // Movement
         inputMovement.x = Input.GetAxisRaw("Horizontal");
         inputMovement.y = Input.GetAxisRaw("Vertical");
-        animator.SetFloat("Horizontal", inputMovement.x);
-        animator.SetFloat("Vertical", inputMovement.y);
-        animator.SetFloat("Speed", inputMovement.sqrMagnitude);
+        
+        // Animations
+        animator.SetFloat(Horizontal, inputMovement.x);
+        animator.SetFloat(Vertical, inputMovement.y);
+        animator.SetFloat(Speed, inputMovement.sqrMagnitude);
         if (inputMovement.x > 0)
-        {
-            gameObject.transform.localScale = new Vector3(1, 1, 1);
-        }
+            renderTransform.localScale = new Vector3(1, 1, 1);
         if (inputMovement.x < 0)
-        {
-            gameObject.transform.localScale = new Vector3(-1, 1, 1);
-        }
+            renderTransform.localScale = new Vector3(-1, 1, 1);
     }
 
     private void HandleSanity()
