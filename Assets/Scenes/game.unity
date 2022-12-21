@@ -270,11 +270,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 37718824}
   m_CullTransparentMesh: 1
---- !u!4 &88244386 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1597232773019511489, guid: f5657ff72a6436a48bff6ad7fd232a9d, type: 3}
-  m_PrefabInstance: {fileID: 5331749305606842881}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &104142842
 GameObject:
   m_ObjectHideFlags: 0
@@ -93376,12 +93371,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1597232773019511490, guid: f5657ff72a6436a48bff6ad7fd232a9d, type: 3}
-      propertyPath: m_SpriteSortPoint
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1597232774500257230, guid: f5657ff72a6436a48bff6ad7fd232a9d, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1597232774500257230, guid: f5657ff72a6436a48bff6ad7fd232a9d, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1597232774500257231, guid: f5657ff72a6436a48bff6ad7fd232a9d, type: 3}
@@ -93436,10 +93431,6 @@ PrefabInstance:
       propertyPath: SanitySliderRef
       value: 
       objectReference: {fileID: 260358776}
-    - target: {fileID: 7229773920520565004, guid: f5657ff72a6436a48bff6ad7fd232a9d, type: 3}
-      propertyPath: renderTransform
-      value: 
-      objectReference: {fileID: 88244386}
     - target: {fileID: 7229773920520565004, guid: f5657ff72a6436a48bff6ad7fd232a9d, type: 3}
       propertyPath: StaminaSliderRef
       value: 
