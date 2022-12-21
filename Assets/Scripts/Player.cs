@@ -10,19 +10,13 @@ public class Player : Unit
     public Animator animator;
 
     [Header("Component refs")]
-    [SerializeField] private Slider HealthSliderRef;
-    [SerializeField] private Slider StaminaSliderRef;
     [SerializeField] private Slider SanitySliderRef;
 
     [Header("Stats")]
     // Stats
-    public float maxHealth = 100f;
-    public float health;
     public float maxSanity = 100f;
     public float sanity;
-    private const float SANITY_LOSE_RATE = .5f;
-    public float maxStamina = 100f;
-    public float stamina;
+    [SerializeField] private float sanityLoseRate = .5f;
 
     // Inventory
     private bool _hasFirstAntidoteComponent;
@@ -45,9 +39,7 @@ public class Player : Unit
 
     private void Start()
     {
-        health = maxHealth;
-        sanity = maxSanity;
-        stamina = maxStamina;
+        Reset();
     }
 
     private void Update()
@@ -72,7 +64,7 @@ public class Player : Unit
 
     private void HandleSanity()
     {
-        sanity -= SANITY_LOSE_RATE * Time.deltaTime;
+        sanity -= sanityLoseRate * Time.deltaTime;
         SanitySliderRef.value = sanity;
     }
 
@@ -86,10 +78,9 @@ public class Player : Unit
         SanitySliderRef.value = sanity;
     }
 
-    private void TakeDamage(float damage)
+    public void Reset()
     {
-        health -= damage;
-        HealthSliderRef.value = health;
+        transform.position = Vector3.zero;
+        sanity = maxSanity;
     }
-    
 }
